@@ -1,0 +1,20 @@
+[
+     {
+          "id" : 1,
+          "name" : "Michael Ballack",
+          "club": "Bayer Leverkusen",
+          "country" : "Germany"
+     },
+     {
+          "id" : 2,
+          "name" : "Andre Pirlo",
+          "club": "Juventus",
+          "country" : "Italy"
+     },
+     {
+          "id" : 3,
+          "name" : "Ricardo Kaka",
+          "club": "AC Milan",
+          "country" : "Brazil"
+     }
+]
