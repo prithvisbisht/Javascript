@@ -1,0 +1,20 @@
+#font { 
+    font-family: 'Comic Sans MS', arial, serif; 
+}
+h1, h2 {
+    text-align: center;
+}
+
+#content {
+    margin-top: 40px;
+}
+.remove-tweet{
+    float: right;
+    cursor: pointer;
+    color: red !important;
+    font-weight: bold;
+}
+.remove-tweet:hover {
+    color:blue;
+
+}
