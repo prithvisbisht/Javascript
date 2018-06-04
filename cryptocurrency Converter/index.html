@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Crypto Currency converter</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="css/materialize.min.css">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
@@ -22,9 +22,13 @@
                         <div class="input-field col s12">
                                 <select id="currency">
                                     <option value="" disabled selected>- Select Currency - </option>
-                                    <option value="USD">USD</option>
-                                    <option value="GBP">GBP</option>
-                                    <option value="EUR">Euro</option>
+                                    <option value="USD">United States Dollar</option>
+                                    <option value="GBP">Great Britain Pound</option>
+                                    <option value="HKD">Hong Kong Dollar</option>
+                                    <option value="MXN">Mexican Peso</option>
+                                    <option value="INR">Indian Rupees</option>
+                                    <option value="JPY">Japanese Yen</option>
+                                    <option value="THB">Thailand Baht</option>
                                 </select>
                                 <label>Currency</label>
                         </div>    
@@ -62,17 +66,14 @@
                 $(document).ready(function(){
                     setTimeout(() => {
                         $('select').select();
-                    }, 4000);
+                    }, 1000);
                 });
             })(jQuery);
         </script>
       <style>
           
           body {
-            background: #136a8a; /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #136a8a, #267871); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #136a8a, #267871); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-          }
+            background-image: linear-gradient(to right, #868f96 0%, #596164 100%);           }
           h1 {
               font-size: 34px;
               color: white;
