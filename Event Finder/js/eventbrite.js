@@ -2,6 +2,7 @@ class EventBrite{
     
     constructor(){
         this.auth_token='WECE22QXMRQZXDTBC774';
+        this.orderby='date';
     }
 
     async getCategoriesAPI(){
@@ -15,6 +16,12 @@ class EventBrite{
     }
 
     async queryAPI(name,category){
-        url=`https://www.eventbriteapi.com/v3/events/search/?q=${}&categories=${}&token=WECE22QXMRQZXDTBC774`
+        const eventResponse= await fetch(`https://www.eventbriteapi.com/v3/events/search/?q=${name}&sort_by=${this.orderby}&categories=${category}&token=${this.auth_token}`);
+
+        const events = await eventResponse.json();
+
+        return{
+            events
+        }
     }
 }

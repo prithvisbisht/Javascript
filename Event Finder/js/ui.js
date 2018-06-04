@@ -6,7 +6,39 @@ class UI{
     init(){
         //to Display categories in Select
         this.printCategories();
+
+        this.result=document.getElementById('result');
     }
+
+    displayEvents(events){
+        //Building template
+
+        let html='';
+        events.forEach(eventInfo => {
+            html+=`
+            <div class="col-md-4 mt-4">
+                <div class="card">
+                    <div class="card-body">
+                        <img src="${eventInfo.logo !== null ? eventInfo.logo.url:"noimage.jpg"}" alt="" class="img-fluid mb-2">
+                    </div>
+                    <div class="card-body">
+                        <div class="card-text">
+                            <h4 class="text-center card-title">${eventInfo.name.text}</h4>
+                            <p class="lead text-info">Event Information:</p>
+                            <p>${eventInfo.description.text.substring(0,200)}...</p>
+                            <span class="badge badge-primary">Capacity: ${eventInfo.capacity}</span>&nbsp
+                            <span class="badge badge-secondary">Date & Time: ${eventInfo.start.local}</span><hr>
+                            <a href="${eventInfo.url}" target="_blank" class="btn btn-primary btn-block md-4">Get Tickets</a>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            `;
+        });
+
+        this.result.innerHTML=html;
+    }
+
     printCategories(){
         const categoryList= eventbrite.getCategoriesAPI()
         .then(categories=>{
