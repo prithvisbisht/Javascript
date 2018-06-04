@@ -1,5 +1,14 @@
 class cryptoAPI{
     
+    async queryAPI(currency,cryptoCurrency){
+        const url= await fetch(`https://api.coinmarketcap.com/v1/ticker/${cryptoCurrency}/?convert=${currency}`);
+
+        const result = await url.json();
+
+        return{
+            result
+        }
+    }
     //GET all the Cryptocurrencies 
     async getCryptoCurrenciesList(){
         const url = await fetch('https://api.coinmarketcap.com/v1/ticker/');
