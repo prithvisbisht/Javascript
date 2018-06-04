@@ -42,8 +42,42 @@ class UI{
         },3000);
     }
 
-    displayResult(result){
-        console.log(result);
+    displayResult(result,currency){
+        let currencyName='price_'+currency.toLowerCase();
         
+                
+        const prevResult=document.querySelector('#result>div');
+        if(prevResult){
+            prevResult.remove();
+        }
+        let html='';
+        html=`
+            <div class="card cyan darken-3">
+                <div class="card-content white-text">
+                    <span class="card-title">Result</span>
+                    <p>The Price of ${result.name} in ${currency}  is ${result[currencyName]}</p>
+                    <p>Changes in Last Hour: ${result.percent_change_1h}%</p>
+                    <p>Changes in Last Day: ${result.percent_change_24h}%</p>
+                    <p>Changes in Last Week: ${result.percent_change_7d}%</p>
+                </div>
+            </div>
+        `;
+
+        this.showSpinner();
+
+        setTimeout(() => {
+
+            document.querySelector('.spinner img').remove();
+
+
+            const divResult=document.getElementById('result');
+            divResult.innerHTML=html;
+        }, 3000);
+    }
+
+    showSpinner(){
+        const spinner=document.createElement('img');
+        spinner.src='img/spinner.gif';
+        document.querySelector('.spinner').appendChild(spinner);
     }
 }

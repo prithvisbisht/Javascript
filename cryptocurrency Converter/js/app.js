@@ -21,7 +21,7 @@ form.addEventListener('submit',(event)=>{
         //Query the REST API
         cryptoapi.queryAPI(currencySelect,cryptoCurrencySelect)
         .then(data=>{
-            ui.displayResult(data.result[0]);
+            ui.displayResult(data.result[0],currencySelect);
             
         })
     }
